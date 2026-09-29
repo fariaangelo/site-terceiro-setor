@@ -1,0 +1,219 @@
+/* Custom Properties para gestão cromática e alto contraste */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --text-on-primary: #ffffff;
+  --card-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --focus-outline: #0056b3;
+  --error-color: #b00020;
+  --success-color: #198754;
+}
+
+/* Modo Escuro / Alto Contraste */
+html.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f8f9fa;
+  --primary-color: #3d8bfd;
+  --primary-hover: #6ea8fe;
+  --text-on-primary: #000000;
+  --card-bg: #1e1e1e;
+  --border-color: #495057;
+  --focus-outline: #ffca28;
+  --error-color: #ffb4ab;
+  --success-color: #75b798;
+}
+
+/* Reset básico e tipografia */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Visibilidade de Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--primary-color);
+  color: var(--text-on-primary);
+  padding: 0.75rem 1.25rem;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--focus-outline);
+}
+
+/* Foco visível destacado (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 3px;
+}
+
+/* Header & Navegação */
+.main-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  background-color: var(--card-bg);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Botão do Tema */
+.btn-theme {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-theme:hover {
+  background-color: var(--border-color);
+}
+
+/* Estutura de Conteúdo Principal */
+main {
+  padding: 2.5rem 0;
+  min-height: 70vh;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Formulários Acessíveis */
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Footer */
+.main-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  background-color: var(--card-bg);
+  text-align: center;
+  font-size: 0.875rem;
+}
